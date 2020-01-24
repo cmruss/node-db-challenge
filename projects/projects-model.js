@@ -14,7 +14,7 @@ function get(id) {
 
     if (id) {
         return query
-            .where("id", id)
+            .where('id', id)
             .first()
             .then(project => {
                 if (project) {

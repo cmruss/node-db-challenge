@@ -14,6 +14,22 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Resources.get(req.params.id)
+    .then(resource => {
+        if (resource){
+            res.json(resource)
+        } else {
+            res.status(404).json({ errorMessage: 'Resource not found.'})
+        }
+    })
+    .catch(error => {
+        console.log(error)
+        res.status(500).json({ errorMessage: 'Problem fetching resources'})
+    });
+});
+
+
 //**  POST  **//
 router.post('/', (req, res) => {
     let resource = req.body

@@ -6,8 +6,16 @@ module.exports = {
 };
 
 //** GET **//
-function get() {
-    return db('resources')
+function get(id) {
+    let query = db('resources')
+
+    if (id) {
+        return query
+            .where('id', id)
+            .first()
+    } else {
+        return query
+    }
 };
 
 
