@@ -14,6 +14,22 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Tasks.get(req.params.id)
+    .then(task => {
+        if(task){
+            res.json(task)
+        } else {
+            res.status(404).json({ errorMessage: 'Task not found.'})
+        }
+    })
+    .catch(error => {
+        console.log(error)
+        res.status(500).json({ errorMessage: 'Problem fetching tasks'})
+    });
+});
+
+
 //**  POST  **//
 router.post('/', (req, res) => {
     let task = req.body
