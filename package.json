@@ -1,0 +1,29 @@
+{
+  "name": "node-db-challenge",
+  "version": "1.0.0",
+  "description": "Data persistence sprint challenge",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "knex": "^0.20.8",
+    "knex-cleaner": "^1.3.0",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmruss/node-db-challenge.git"
+  },
+  "author": "CMRuss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmruss/node-db-challenge/issues"
+  },
+  "homepage": "https://github.com/cmruss/node-db-challenge#readme"
+}

@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+`Relational Databases` are the software used to store the data like SQLite or postgres, while `SQL` is the language used to communicate with the database.
+
 - [ ] Why do tables need a `primary key`?
+
+Each entry needs a unique value by which the specified data can be found, otherwise the purpose of the database would be moot.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+`Foreign Key`.
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+A `Join Table`.
 
 ## Minimum Viable Product
 
