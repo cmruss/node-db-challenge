@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
 router.get('/:id/tasks', (req, res) => {
     Projects.getTasks(req.params.id)
     .then(tasks => {
-        if(tasks.length > 1){
+        if(tasks){
             res.json(tasks)
         } else {
             res.json({ message: 'No tasks yet.'})

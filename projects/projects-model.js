@@ -18,7 +18,8 @@ function get(id) {
             .first()
             .then(project => {
                 if (project) {
-                    return mappers.projectToBody(project);
+                    return mappers.projectToBody(project)
+                        .then()
                 } else {
                     return null;
                 }
@@ -34,7 +35,10 @@ function getTasks(project_id) {
     return db('tasks as t')
     .where('project_id', project_id)
     .join('projects as p', 't.project_id', '=', 'p.id')
-    .select('p.name as project_name', 'p.description as project_description', 't.description as task_description', 't.notes as task_notes', 't.completed as task_completed')
+    .select('p.name as project_name', 'p.description as project_description', 't.description as task_description', 't.notes as task_notes')
+    .then(tasks => {
+        return tasks.map(task => mappers.taskToBody(task));
+    })
 };
 
 function insert(project) {
